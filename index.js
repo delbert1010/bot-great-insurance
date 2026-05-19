@@ -65,22 +65,34 @@ REGLAS:
 6. Menciona cobertura multi-estado cuando relevante
 
 FORMATO:
-- Posts de Facebook/Instagram: 150-200 palabras
+- Posts de Facebook/Instagram: 150-180 palabras de contenido
 - Incluye emojis moderadamente (2-3 por post)
-- CTA claro pero no agresivo al final
-- Hashtags: 3-5 relevantes
+- SIEMPRE termina con este bloque de contacto:
+
+---
+📞 CONTÁCTANOS:
+☎️ Teléfono: 954-394-7439
+💬 WhatsApp: wa.me/19543947439
+
+🔗 ENLACES DIRECTOS:
+💙 Cotiza tu ACA ahora: enrollsalud.com/q/liliana-vera
+🌐 Más servicios: greatinsuranceteam.com
+
+#SegurosDeVida #ACA #Florida #SegurosEnEspañol
+
+IMPORTANTE: El CTA debe facilitar la conversión - hacer FÁCIL que contacten o coticen.
 
 Genera contenido educativo y útil que posicione a Great Insurance Team como expertos confiables.`;
 
 // Función para generar contenido con Claude
 async function generarContenido(tipoServicio) {
   const prompts = {
-    seguros_salud_aca: "Post de Facebook sobre por qué revisar opciones de seguro médico ACA cada año durante Open Enrollment. Educativo, menciona subsidios sin prometer cantidades específicas. 180 palabras.",
-    seguros_vida: "Post de Instagram explicando cuándo es buen momento para obtener seguro de vida (eventos de vida: matrimonio, hijos, casa). Tono cercano. 160 palabras.",
-    seguros_auto: "Post de Facebook sobre 3 factores que afectan el precio del seguro de auto y cómo las familias pueden ahorrar. Práctico y útil. 170 palabras.",
-    seguros_dentales: "Post explicando la diferencia entre seguro dental y planes de descuento dental. Ayuda a familias a elegir. 150 palabras.",
-    seguros_suplementarios: "Post sobre qué son los seguros suplementarios de Medicare y quién los necesita. Para audiencia 60+. 180 palabras.",
-    preparacion_impuestos: "Post recordando documentos que familias deben juntar para temporada de impuestos. Útil y práctico. 160 palabras."
+    seguros_salud_aca: "Post de Facebook sobre por qué revisar opciones de seguro médico ACA cada año durante Open Enrollment. Educativo, menciona subsidios sin prometer cantidades específicas. 140 palabras.",
+    seguros_vida: "Post de Instagram explicando cuándo es buen momento para obtener seguro de vida (eventos de vida: matrimonio, hijos, casa). Tono cercano. 130 palabras.",
+    seguros_auto: "Post de Facebook sobre 3 factores que afectan el precio del seguro de auto y cómo las familias pueden ahorrar. Práctico y útil. 140 palabras.",
+    seguros_dentales: "Post explicando la diferencia entre seguro dental y planes de descuento dental. Ayuda a familias a elegir. 130 palabras.",
+    seguros_suplementarios: "Post sobre qué son los seguros suplementarios de Medicare y quién los necesita. Para audiencia 60+. 140 palabras.",
+    preparacion_impuestos: "Post recordando documentos que familias deben juntar para temporada de impuestos. Útil y práctico. 130 palabras."
   };
 
   const userPrompt = prompts[tipoServicio] || prompts.seguros_salud_aca;
