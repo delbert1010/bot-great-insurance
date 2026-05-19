@@ -8,6 +8,7 @@ Bot de Telegram que genera contenido automáticamente para redes sociales usando
 2. **Envía a Telegram** para aprobación de Delbert
 3. **Delbert aprueba** con botón ✅ o rechaza con ❌
 4. **Publica automáticamente** en Facebook/Instagram si se aprueba
+5.  
 
 ## 📋 Servicios Cubiertos
 
