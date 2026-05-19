@@ -1,0 +1,19 @@
+{
+  "name": "great-insurance-content-bot",
+  "version": "1.0.0",
+  "description": "Bot automatizado de contenido para Great Insurance Team & Tax Service",
+  "main": "index.js",
+  "scripts": {
+    "start": "node index.js",
+    "dev": "nodemon index.js"
+  },
+  "dependencies": {
+    "@anthropic-ai/sdk": "^0.20.0",
+    "node-telegram-bot-api": "^0.65.0",
+    "axios": "^1.6.0",
+    "node-schedule": "^2.1.1"
+  },
+  "engines": {
+    "node": ">=18.0.0"
+  }
+}
