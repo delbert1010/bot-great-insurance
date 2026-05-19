@@ -11,6 +11,5 @@
       "src": "/(.*)",
       "dest": "index.js"
     }
-  ],
+  ]
 }
-Page_UpPage_UpPage_Up
