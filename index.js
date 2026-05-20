@@ -159,8 +159,8 @@ async function generarContenido(tipoServicio) {
     seguros_vida: "Post EDUCATIVO de Instagram explicando cuándo es buen momento para seguro de vida (matrimonio, hijos, casa). Usa claridad y autoridad. Incluye descripción detallada de imagen. 110 palabras.",
     seguros_auto: "Post EMOCIONAL sobre un padre que tuvo accidente sin seguro adecuado y las consecuencias. Usa contraste sin miedo extremo. Incluye descripción detallada de imagen. 120 palabras.",
     seguros_dentales: "Post EDUCATIVO explicando la diferencia entre seguro dental y planes de descuento. Usa claridad. Incluye descripción detallada de imagen. 110 palabras.",
-    seguros_suplementarios: "Post EMOCIONAL para adultos mayores preocupados por gastos médicos inesperados. Usa dolor silencioso y urgencia responsable. Incluye descripción detallada de imagen. 120 palabras.",
-    preparacion_impuestos: "Post EDUCATIVO sobre documentos que familias hispanas deben juntar para impuestos. Práctico y útil. Incluye descripción detallada de imagen. 110 palabras."
+    seguros_suplementarios: "Post EMOCIONAL para adultos mayores preocupados por gastos médicos inesperados. Usa dolor silencioso y urgencia responsable. Incluye descripción detallada de imagen. 120 palabras."
+    // preparacion_impuestos removido temporalmente - se reactiva en enero 2027
   };
 
   const userPrompt = prompts[tipoServicio] || prompts.seguros_salud_aca;
