@@ -25,14 +25,40 @@ const anthropic = new Anthropic({
 const pendingContent = new Map();
 
 // Servicios que Great Insurance Team ofrece
-const SERVICIOS = [
+const SERVICIOS_SEGUROS = [
   'seguros_salud_aca',
   'seguros_vida',
   'seguros_auto',
   'seguros_dentales',
-  'seguros_suplementarios',
-  'preparacion_impuestos'
+  'seguros_suplementarios'
 ];
+
+const SERVICIO_TAXES = 'preparacion_impuestos';
+
+// Función para determinar qué servicios están activos según la fecha
+function getServiciosActivos() {
+  const hoy = new Date();
+  const mes = hoy.getMonth() + 1; // 1-12
+  const dia = hoy.getDate();
+  
+  // Temporada de impuestos: Enero 1 - Abril 15
+  // Durante esta temporada: 60% taxes, 40% seguros
+  const esTaxSeason = (mes === 1) || (mes === 2) || (mes === 3) || (mes === 4 && dia <= 15);
+  
+  if (esTaxSeason) {
+    // Durante tax season: taxes aparece más frecuentemente
+    // Ratio 60/40: [taxes, taxes, taxes, seguro, seguro]
+    return [
+      SERVICIO_TAXES,
+      SERVICIO_TAXES,
+      SERVICIO_TAXES,
+      ...SERVICIOS_SEGUROS.slice(0, 2) // Solo 2 seguros para mantener ratio
+    ];
+  } else {
+    // Fuera de tax season: solo seguros
+    return SERVICIOS_SEGUROS;
+  }
+}
 
 // Prompt del sistema para generación de contenido con neuroventas éticas
 const SYSTEM_PROMPT = `Eres un experto en publicidad directa, neuroventas éticas y marketing de seguros para la comunidad hispana.
@@ -215,8 +241,11 @@ async function publicarEnInstagram(contenido) {
 
 // Generar contenido diario automáticamente
 async function generarContenidoDiario() {
-  // Seleccionar servicio aleatorio
-  const servicioAleatorio = SERVICIOS[Math.floor(Math.random() * SERVICIOS.length)];
+  // Obtener servicios activos según la temporada
+  const serviciosActivos = getServiciosActivos();
+  
+  // Seleccionar servicio aleatorio de los activos
+  const servicioAleatorio = serviciosActivos[Math.floor(Math.random() * serviciosActivos.length)];
   
   console.log(`Generando contenido para: ${servicioAleatorio}`);
   
